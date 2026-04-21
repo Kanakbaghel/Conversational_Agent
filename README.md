@@ -13,3 +13,9 @@ Each new customer will receive a $600 credit for a $0 trial of Dialogflow CX.
 
 # Conversational_Agent
 Conversational Agents provides a simple, visual bot building approach to Conversational Agent design. Bot designers now have a much clearer picture of the overall bot building process and multiple designers are able to easily collaborate on the same agent build. Conversational Agents supports many languages for your agent to use and understand, but this lab will be using only English.
+
+-----------------
+
+Testing
+
+<img width="492" height="604" alt="image" src="https://github.com/user-attachments/assets/f1e57552-32e2-4f7b-bbb0-3e154eecab30" />
