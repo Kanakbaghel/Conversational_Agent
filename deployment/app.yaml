@@ -1,0 +1,6 @@
+runtime: python311
+entrypoint: gunicorn -b :$PORT src.webhook:app
+
+env_variables:
+  PROJECT_ID: "your-gcp-project"
+  AGENT_ID: "your-agent-id"
