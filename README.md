@@ -10,6 +10,26 @@ Dialogflow CX can analyze multiple types of input from your customers, including
 Each new customer will receive a $600 credit for a $0 trial of Dialogflow CX.
 
 --------------------
+# Conversational Agent 🤖
+
+This repo contains a Dialogflow CX agent with supporting Python code for testing and deployment.
+
+## Features
+- Dialogflow CX agent exports (`agents/`)
+- Python client (`src/dialogflow_client.py`)
+- Webhook fulfillment (`src/webhook.py`)
+- Unit tests (`tests/test_agent.py`)
+- Deployment configs (Docker, GCP, Heroku)
+
+## Setup
+```bash
+pip install -r requirements.txt
+export PROJECT_ID="your-gcp-project"
+export AGENT_ID="your-agent-id"
+python src/main.py
+```
+
+------------
 
 # Conversational_Agent
 Conversational Agents provides a simple, visual bot building approach to Conversational Agent design. Bot designers now have a much clearer picture of the overall bot building process and multiple designers are able to easily collaborate on the same agent build. Conversational Agents supports many languages for your agent to use and understand, but this lab will be using only English.
