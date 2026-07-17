@@ -1,41 +1,89 @@
-# Dialogflow CX documentation
----------
-
-Dialogflow CX is a new natural language understanding platform built on generative models that can control conversations and on flows that can be used for more explicit conversation control.
-
-Dialogflow CX makes it easy to design and integrate a conversational user interface into your mobile app, web application, device, bot, interactive voice response system, and so on. Using Dialogflow CX, you can provide new and engaging ways for users to interact with your product.
-
-Dialogflow CX can analyze multiple types of input from your customers, including text or audio inputs (like from a phone or voice recording). It can also respond to your customers in a couple of ways, either through text or with synthetic speech.
-
-Each new customer will receive a $600 credit for a $0 trial of Dialogflow CX.
-
---------------------
 # Conversational Agent 🤖
 
-This repo contains a Dialogflow CX agent with supporting Python code for testing and deployment.
+A Dialogflow CX–based conversational agent with Python support code for testing, fulfillment, and deployment.  
+This project demonstrates end‑to‑end chatbot development: from agent design to API integration, testing, and cloud deployment.
 
-## Features
-- Dialogflow CX agent exports (`agents/`)
-- Python client (`src/dialogflow_client.py`)
-- Webhook fulfillment (`src/webhook.py`)
-- Unit tests (`tests/test_agent.py`)
-- Deployment configs (Docker, GCP, Heroku)
+---
 
-## Setup
+## ✨ Features
+- **Dialogflow CX agent exports** (`agents/`)
+- **Python client** (`src/dialogflow_client.py`) for interacting with the agent
+- **Webhook fulfillment** (`src/webhook.py`) for custom responses
+- **Unit tests** (`tests/test_agent.py`) to validate flows and intents
+- **Deployment configs** for Docker, GCP App Engine, and Heroku
+
+---
+
+## 🛠️ Setup
+Clone the repo and install dependencies:
 ```bash
+git clone https://github.com/Kanakbaghel/Conversational_Agent.git
+cd Conversational_Agent
 pip install -r requirements.txt
-export PROJECT_ID="your-gcp-project"
+```
+
+Set environment variables:
+```bash
+export PROJECT_ID="your-gcp-project-id"
 export AGENT_ID="your-agent-id"
+```
+
+Run locally:
+```bash
 python src/main.py
 ```
 
-------------
+---
 
-# Conversational_Agent
-Conversational Agents provides a simple, visual bot building approach to Conversational Agent design. Bot designers now have a much clearer picture of the overall bot building process and multiple designers are able to easily collaborate on the same agent build. Conversational Agents supports many languages for your agent to use and understand, but this lab will be using only English.
+## 🚀 Deployment
 
------------------
+### 🔹 Google Cloud App Engine
+```bash
+gcloud app deploy deployment/app.yaml
+```
 
-Testing
+### 🔹 Docker
+```bash
+docker build -t conversational-agent .
+docker run -p 8080:8080 conversational-agent
+```
 
-<img width="492" height="604" alt="image" src="https://github.com/user-attachments/assets/f1e57552-32e2-4f7b-bbb0-3e154eecab30" />
+### 🔹 Heroku
+```bash
+heroku create
+git push heroku main
+```
+Make sure `Procfile` is at the root:
+```
+web: gunicorn src.webhook:app
+```
+
+---
+
+## 🧪 Testing
+Run unit tests:
+```bash
+pytest tests/
+```
+
+---
+
+## 📂 Project Structure
+```
+Conversational_Agent/
+│── src/                        # Core Python code
+│── tests/                      # Unit tests
+│── requirements.txt             # Dependencies
+│── app.yaml                     # GCP deployment config
+│── .gitignore                   # Repo hygiene
+│── README.md                    # Documentation
+│── Procfile                     # Heroku deployment
+│── deployment/
+│   └── Dockerfile               # Docker containerization
+```
+
+---
+
+## 📜 License
+MIT License – free to use and modify.
+```
